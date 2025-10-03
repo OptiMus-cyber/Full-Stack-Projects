@@ -1,0 +1,22 @@
+
+.card-body{   
+    /* background-image: url("./assets/backgroundImage.jpg"); */
+    background-color: #F0EABE;
+    border: 2px solid black;
+
+
+}
+.form-group{
+    color: black;
+
+}
+.card{
+    background-color: #ECCCB2;
+    border: 2px solid black;
+}
+input{
+    
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 0px;
+}

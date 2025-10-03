@@ -1,0 +1,95 @@
+<div class="row" *ngIf="services">
+
+    <div class="col-md-4 offset-md-4 mt-4">
+
+        <div class="card shadow text-dark mt-2">
+            <div class="card-header">
+                <!-- render the message "Get your work done with us"  -->
+
+                <h4 class="text text-center"><b id="message">Get your work done with us</b></h4>
+                <hr>
+                <!-- render the name of the service selected  -->
+
+                <h6 class="text text-center">You have chosen: <b  id="title">{{' '+services.name+' service'}}</b></h6>
+                <!-- render the availability of the service selected -->
+
+                <h6 class="text text-center">Availibility: <b id="availability">{{services.availability}}</b></h6>
+            </div>
+            <!-- BIND THE FORM TO formValue instance and invoke bookAppointment() method on form submission -->
+
+            <form [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()"> 
+
+                <div class="card-body">
+                    <!-- name field -->
+                    <!-- FORM CONTROL ==> cName -->
+                    <div class="form-group mt-3 mt-2">
+                        <label for="cName" class="form-check-label">Customer Name</label>
+                        <input type="text" class="form-control" formControlName="cName" id="cName" name="cName">
+
+                        <div id="customerNameError" class="alert alert-danger" *ngIf="appointmentForm.controls['cName'].dirty&&appointmentForm.controls['cName'].invalid">
+                     <!-- render the error message with proper class-->
+                     <!-- Message for required error ==> 'Field Required' -->
+                      <small *ngIf="appointmentForm.controls['cName'].errors?.['required']">Field Required</small>
+                     <!-- Message for pattern error ==> 'Enter a valid Name' -->
+                     <small *ngIf="appointmentForm.controls['cName'].errors?.['pattern']">Enter a valid Name</small>
+                        </div>
+                    </div>
+
+                    <!-- address field -->
+                    <!-- FORM CONTROL ==> address --> 
+                    <div class="form-group mt-3">
+                        <label for="address" class="form-check-label">Address</label>
+                        <input type="text" class="form-control" formControlName="address" id="address" name="address"> 
+
+                        <div id="addressError" class="alert alert-danger" *ngIf="appointmentForm.controls['address'].dirty&&appointmentForm.controls['address'].invalid">
+                     <!-- render the error message with proper class-->
+                     <!-- Message for required error ==> 'Field Required' -->
+                     <small *ngIf="appointmentForm.controls['address'].errors?.['required']">Field Required</small>
+
+                        </div>
+                    </div>
+
+                    <!-- phone number field -->
+                    <!-- FORM CONTROL ==> phoneNo -->
+                    <div class="form-group mt-3">
+                        <label for="phoneNo" class="form-check-label">Phone Number</label>
+                        <input type="number" class="form-control" formControlName="phoneNo" id="phoneNo" name="phoneNo"> 
+                        <div id="phoneNoError" class="alert alert-danger" *ngIf="appointmentForm.controls['phoneNo'].dirty&&appointmentForm.controls['phoneNo'].invalid">
+                     <!-- render the error message with proper class-->
+                     <!-- Message for required error ==> 'Field Required' -->
+                     <small *ngIf="appointmentForm.controls['phoneNo'].errors?.['required']">Field Required</small>
+                     <!-- Message for pattern error ==> 'Enter a valid Phone No.' -->
+                     <small *ngIf="appointmentForm.controls['phoneNo'].errors?.['pattern']">Enter a valid Phone No.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-footer text-center">
+                    <div class="form-group mt-3">
+                        <!-- button should be disabled till appointmentForm becomes valid -->
+                        <button class="btn btn-outline-success btn-md btn-block mr-4"  id="confirmAppointment"
+                            type="submit" [disabled]="appointmentForm.invalid">
+                            Book
+                        </button>
+                    </div>
+
+                    <button  class="btn btn-link" id="checkForAvailability" routerLink="'/services'"> 
+                         <!-- give the proper link to direct to services component" -->
+                         Check for Services Availability.
+                    </button>
+
+                    <!-- render the success and error messages based on form submission response -->
+                    <div *ngIf="errorMessage" class="text" id="errorMessage" class="text-danger">
+                        <!-- print error message with proper class-->
+                        {{errorMessage}}
+                    </div>
+                    <div *ngIf="successMessage" class="text" id="successMessage" class="text-success">
+                        <!-- print success message with proper class-->
+                       {{successMessage}}
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<h2 class="textStyle text-center">Welcome to Great Services</h2>
+<div class="row" *ngIf="serviceArray?.length">
+    <!-- 
+        Iterate over the serviceArray to render the cards for all the services 
+     -->
+    <div class="col-md-3" id="serviceCard" *ngFor="let service of serviceArray">
+        <div class="card shadow">
+                       
+    <!-- modify the img tag to display the image using the Image property  
+         of all the services and set alternate text as the service id -->
+         
+            <img id="serviceImage" [src]="service.image" [alt]="''+service.id"  height="250px" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title" id="cardTitle">
+               <!-- display the name of the service with titlecasing using proper pipes
+                   as shown in the screenshots -->
+                {{service.name|titlecase}}
+                </h5>
+
+                <div class="cardData">
+
+                    <p id="description">{{service.desc}}</p>
+                    <h6 id="charges">Charges: {{service.charges|currency:'INR':'symbol':'.2'}}</h6>
+                    <h6 id="rating">Rating: {{'&#9733;'+service.overallRating}}</h6>
+                </div>
+
+    <!-- on click of this button it should call showAppointmentForm method with id of service as a parameter -->
+                <button class="btn btn-outline-dark btn-sm mt-2"   id="bookAppointment" (click)="showAppointmentForm(service.id)">
+                    Book appointment
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<div *ngIf="!serviceArray?.length">
+    <h1 class="text-center" id="errorMessage">
+         <!-- print error message with proper class-->
+        {{errorMessage}}
+    </h1>
+</div>
