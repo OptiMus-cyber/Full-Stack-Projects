@@ -1,7 +1,7 @@
 {
   "service": [
     {
-      "id": 1,
+      "id": "1",
       "image": "assets/airConditioner.jpg",
       "name": "Air Conditioner",
       "desc": "We have expert technicians over a wide range of locations",
@@ -10,7 +10,7 @@
       "availability": "Currently service is available"
     },
     {
-      "id": 2,
+      "id": "2",
       "image": "assets/washingMachine.jpg",
       "name": "Washing Machine",
       "desc": "We serve over a wide range of washing machines",
@@ -19,7 +19,7 @@
       "availability": "Currently service is not available"
     },
     {
-      "id": 3,
+      "id": "3",
       "image": "assets/television.jpg",
       "name": "Television",
       "desc": "We have solution for all your machine related problems",
@@ -28,7 +28,7 @@
       "availability": "Currently service is not available"
     },
     {
-      "id": 4,
+      "id": "4",
       "image": "assets/ovens.jpg",
       "name": "Ovens",
       "desc": "We have solution for all your machine related problems",
@@ -42,163 +42,169 @@
       "cName": "kshitij sahare",
       "address": "Campus Mysore",
       "phoneNo": 9325734045,
-      "id": 1
+      "id": "1"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 2
+      "id": "2"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 3
+      "id": "3"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 4
+      "id": "4"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 5
+      "id": "5"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 6
+      "id": "6"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 7
+      "id": "7"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 8
+      "id": "8"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 9
+      "id": "9"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 10
+      "id": "10"
     },
     {
       "cName": "aedaewfe",
       "address": "fresrfe",
       "phoneNo": 9345353454,
-      "id": 11
+      "id": "11"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 12
+      "id": "12"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 13
+      "id": "13"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 14
+      "id": "14"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 15
+      "id": "15"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 16
+      "id": "16"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 17
+      "id": "17"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 18
+      "id": "18"
     },
     {
       "cName": "vdfv",
       "address": "343dfdffd",
       "phoneNo": 7334546456,
-      "id": 19
+      "id": "19"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 20
+      "id": "20"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 21
+      "id": "21"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 22
+      "id": "22"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 23
+      "id": "23"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 24
+      "id": "24"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 25
+      "id": "25"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 26
+      "id": "26"
     },
     {
       "cName": "kartik",
       "address": "something something",
       "phoneNo": "9999999999",
-      "id": 27
+      "id": "27"
+    },
+    {
+      "id": "06ba",
+      "cName": "Prakash",
+      "address": "181 A, Street No.6, Mohan Nagar B, B.J.S. Colony,Jodhpur",
+      "phoneNo": 9560458984
     }
   ]
 }
