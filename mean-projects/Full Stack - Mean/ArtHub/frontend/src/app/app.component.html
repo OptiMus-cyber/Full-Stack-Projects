@@ -1,0 +1,68 @@
+<app-toast></app-toast>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow px-2">
+    <a class="navbar-brand" [routerLink]="['/']">Art<span class="text-warning">Hub</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <!-- <div class="navbar-nav"><input type="text" class="rounded-2"><i class="bi bi-search"></i></div> -->
+        <div class="navbar-nav ms-auto">
+            <a class="nav-item nav-link" [class]="router.url=='/'?'active':''" [routerLink]="['/']">
+                Home
+            </a>
+            <!-- <a class="nav-item nav-link" [routerLink]="['/wishlist']">
+                Wishlist
+            </a> -->
+            <a class="nav-item nav-link" [class]="router.url=='/orders'?'active':''" [routerLink]="['/orders']" *ngIf="authService.hasRole('buyer')">
+                Orders
+            </a>
+            <a class="nav-item nav-link" [class]="router.url=='/wishlist'?'active':''" [routerLink]="['/wishlist']" *ngIf="authService.hasRole('buyer')">
+                Wishlist
+            </a>
+            <a class="nav-item nav-link" [class]="router.url=='/upload-artwork'?'active':''" [routerLink]="['/upload-artwork']" *ngIf="authService.hasRole('artist')">
+                Add Artwork
+            </a>
+            <a class="nav-item nav-link" [class]="router.url=='/custom-work'?'active':''" [routerLink]="['/custom-work']" *ngIf="authService.hasRole('buyer')">
+                Custom Artwork
+            </a>
+            <a class="nav-item nav-link" [class]="router.url=='/commission'?'active':''" [routerLink]="['/commission']" *ngIf="authService.hasRole('artist')">
+                Commissions
+            </a>
+            <a class="nav-item nav-link" [class]="router.url=='/promotions'?'active':''" [routerLink]="['/promotions']" *ngIf="authService.hasRole('artist')">
+                Promotions
+            </a>
+            <ul class="nav-item dropdown mb-0 me-3 ps-0">
+                <a class="nav-item nav-link dropdown-toggle fs-6" href="javascript:void(0)" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">{{authService.getUserName()?'Welcome, '+authService.getUserName():'Welcome, Login here'}}!
+                    <img [src]="previewImage?previewImage:'../../assets/profile-icon.png'" class="rounded-circle profile-img" height="25" width="30" *ngIf="authService.isLoggedIn()">
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-lg-end">
+                    <li>
+                        <a class="dropdown-item" [routerLink]="['/profile']" *ngIf="authService.isLoggedIn()">
+                            Profile
+                        </a>
+                        <a class="dropdown-item" [routerLink]="['/login']" *ngIf="!authService.isLoggedIn()">
+                            Login
+                        </a>
+                        <a class="dropdown-item" [routerLink]="['/register']" *ngIf="!authService.isLoggedIn()">
+                            Register
+                        </a>
+                        <a class="dropdown-item text-danger" href="javascript:void(0)" *ngIf="authService.isLoggedIn()" (click)="logout()">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid overflow-auto min-vh-100 px-0">
+    <!-- Add the HTML code to render the routed components -->
+    <router-outlet></router-outlet>
+</div>
+
+<footer class="d-flex justify-content-around bg-dark text-secondary py-2">
+    <span>@arthub</span>
+</footer>

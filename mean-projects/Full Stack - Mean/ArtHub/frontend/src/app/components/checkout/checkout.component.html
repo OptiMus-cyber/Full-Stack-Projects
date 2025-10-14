@@ -1,0 +1,61 @@
+<div class="container my-3" *ngIf="artwork">
+    <h2>Checkout</h2>
+
+    <div class="row">
+        <!-- Artwork Image -->
+        <div class="col-md-4">
+            <img [src]="artwork.images[0]" alt="Artwork Image" class="img-fluid rounded">
+        </div>
+
+        <!-- Artwork Details -->
+        <div class="col-md-8">
+            <h4>{{artwork.title}}</h4>
+            <p><strong>Artist:</strong> {{ artwork.artistId.name }}</p>
+            <p><strong>Category:</strong> {{ artwork.category }}</p>
+            <p><strong>Description:</strong> {{ artwork.description }}</p>
+            <p><strong>Price:</strong> ${{ artwork.price }}</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Shipping Details Form -->
+    <h4 class="text-muted">Shipping Information</h4>
+    <form #checkoutForm="ngForm" (ngSubmit)="confirmPurchase()">
+        <div class="row px-3">
+            <div class="col-md-6 mb-3">
+                <label for="fullName">Full Name</label>
+                <input type="text" #fullName="ngModel" class="form-control" [(ngModel)]="shipping.fullName" id="fullName" name="fullName" required placeholder="Full Name">
+                <div class="text-danger small alert alert-danger py-2" *ngIf="fullName.invalid && fullName.dirty">Name is required.</div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="phone">Phone Number</label>
+                <input type="number" class="form-control" #phone="ngModel" [(ngModel)]="shipping.phone" id="phone" name="phone" required placeholder="Phone Number" pattern="^\d{10}$">
+                <div class="text-danger small alert alert-danger py-2" *ngIf="phone.invalid && phone.dirty">Enter 10 digit phone number</div>
+            </div>
+        </div>
+
+        <div class="row px-3 mb-3">
+            <div class="col-md-12">
+                <label for="address">Address</label>
+                <textarea type="text" class="form-control" #address="ngModel" [(ngModel)]="shipping.address" id="address" name="address" required placeholder="Address"></textarea>
+                <div class="text-danger small alert alert-danger py-2" *ngIf="address.invalid && address.dirty">Address is required.</div>
+            </div>
+        </div>
+
+        <!-- Payment Method Selection -->
+        <h4 class="text-muted">Payment Method</h4>
+        <div class="row px-5 mb-2">
+            <div class="form-check col-md-6">
+                <input type="radio" class="form-check-input" id="online" value="online" [(ngModel)]="paymentMethod" name="paymentMethod">
+                <label for="online" class="form-check-label">Online Payment</label>
+            </div>
+            <div class="form-check col-md-6">
+                <input type="radio" class="form-check-input" id="cod" value="cod" [(ngModel)]="paymentMethod" name="paymentMethod">
+                <label for="cod" class="form-check-label">Cash on Delivery (COD)</label>
+            </div>
+        </div>
+
+        <button class="btn btn-outline-warning mt-3" type="submit" [disabled]="checkoutForm.invalid">Place Order</button>
+    </form>
+</div>

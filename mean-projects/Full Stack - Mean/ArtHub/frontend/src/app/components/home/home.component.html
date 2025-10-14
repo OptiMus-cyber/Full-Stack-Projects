@@ -1,0 +1,77 @@
+<div class="container-fluid px-3 py-5 bg-secondary bg-opacity-10 m-0 w-100" *ngIf="promotions.length">
+    <!-- <h3 class="text-center">Promoted Artworks</h3> -->
+    <div class="carousel slide" id="promotedArtworksCarousel" data-bs-ride="carousel">
+        <div class="carousel-inner text-center">
+            <div *ngFor="let promotion of promotions, let i = index" class="carousel-item text-center" data-bs-interval="2500" [class.active]="i==0">
+                <div class="d-flex justify-content-center p-0">
+                    <img [src]="promotion.artworkId.images[0]" alt="{{promotion.artworkId.title}}" class="d-block" style="border-radius: 25px" height="435" width="1000" (click)="viewDetails(promotion.artworkId)">
+                    <div class="carousel-caption text-center">
+                        <h4 class="card-body bg-danger py-2 bg-opacity-25 w-100 mb-0">{{promotion.title}}</h4>
+                        <div class="card-body bg-info py-2 bg-opacity-10 w-100 mt-0">{{promotion.description}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" data-bs-target="#promotedArtworksCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bg-secondary rounded-3 bg-opacity-25" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#promotedArtworksCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon bg-secondary rounded-3 bg-opacity-25" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div class="container-fluid vh-100">
+
+    <!-- Filters -->
+    <div class="row mb-3 mt-2">
+        <div class="col-md-3">
+            <!-- <small class="text-muted ps-2">Search</small> -->
+            <input class="form-control my-1" [(ngModel)]="searchQuery" (input)="filterSearch()" placeholder="Search">
+        </div>
+        <div class="col-md-3 ms-auto pt-2">
+            <span class="textStyle text-center my-4">Welcome to Art<span class="text-warning">Hub</span></span>
+        </div>
+        <div class="col-md-2 ms-auto">
+            <!-- <small class="text-muted ps-2">Filter by Category</small> -->
+            <select class="form-control my-1" [(ngModel)]="selectedCategory" (change)="filterArtworks()" placeholder="Categories">
+                <option value="">All Categories</option>
+                <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+            </select>
+        </div>
+        <div class="col-md-2">
+            <!-- <small class="text-muted ps-2">Filter by Artist</small> -->
+            <select class="form-control my-1" [(ngModel)]="selectedArtist" (change)="filterArtworks()" placeholder="Artists">
+                <option value="">All Artists</option>
+                <option *ngFor="let artist of artists" [value]="artist">{{artist}}</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="alert alert-info" *ngIf="filteredArtworks.length === 0">
+        No Artworks found.
+    </div>
+    
+    <!-- Artwork List -->
+    <div class="row">
+        <div class="col-md-3" *ngFor="let artwork of filteredArtworks, let i = index">
+            <div class="card mb-3">
+                <img [src]="artwork.images[0]" alt="Artwork Image" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{artwork.title}}</h5>
+                    <span class="card-text">{{artwork.description}}</span><br>
+                    <span class="text-muted">Category: {{artwork.category}}</span><br>
+                    <span class="text-muted">Artist: {{artwork.artistId.name}}</span><br>
+                    <span *ngIf="!artworkDiscounts[i]" class="text-success">Price: <span class="text-dark">
+                        ${{artwork.price}}
+                    </span></span>
+                    <span *ngIf="!!artworkDiscounts[i]"><span class="cursive text-success">Price:</span> ${{ artwork.price-(artwork.price*artworkDiscounts[i])/100 }} <span class="text-decoration-line-through">${{ artwork.price }}</span></span>
+                    <span class="text-warning" *ngIf="!!artworkDiscounts[i]">&nbsp;&nbsp;-{{artworkDiscounts[i]}}%</span><br>
+                    <button class="btn btn-sm btn-outline-success mt-2" (click)="viewDetails(artwork)">View details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

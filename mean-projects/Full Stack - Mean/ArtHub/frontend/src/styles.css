@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    /* background-image: url(assets/background.jpg); */
+    background-size: cover;
+}
+
+.mat-snack-bar-container {
+    position: fixed !important;
+    min-width: 200px !important;
+    max-width: 250px !important;
+    top: 20px !important;
+    right: 10px !important;
+    left: auto !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    height: 20px !important;
+    border-radius: 5px !important;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2) !important;
+}
+
+.success-snackbar {
+    background-color: #4caf50 !important;
+    color: white !important;
+}
+
+.error-snackbar {
+    background-color: #f44336 !important;
+    color: white !important;
+}
+
+.warning-snackbar {
+    background-color: yellow !important;
+    color: white !important;
+}
+
+.info-snackbar {
+    background-color: #2196f3 !important;
+    color: white !important;
+}

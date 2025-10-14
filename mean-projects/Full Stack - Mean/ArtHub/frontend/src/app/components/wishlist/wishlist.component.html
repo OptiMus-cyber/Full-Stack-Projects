@@ -1,0 +1,18 @@
+<div class="container my-3">
+    <h3 class="cursive text-center text-warning mb-3">My Wishlist</h3>
+
+    <div *ngIf="wishlist.length === 0" class="alert alert-info">
+        No items in wishlist.
+    </div>
+
+    <div class="card mb-3" *ngFor="let item of wishlist">
+        <div class="card-body">
+            <h5>{{ item.artworkId.title }}</h5>
+            <img [src]="item.artworkId.images[0]" alt="Artwork Image" class="wishlist-image">
+            <div class="d-flex justify-content-between my-2">
+                <button type="button" class="btn btn-outline-success" (click)="viewDetails(item.artworkId._id)">View details</button>
+                <button class="btn btn-danger" (click)="removeFromWishlist(item.artworkId._id)">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <h3 class="d-inline text-warning cursive">Custom Artworks</h3>
+        <button class="btn btn-outline-warning btn-sm" [routerLink]="['/custom-work-history']">Track Custom Artworks</button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" *ngFor="let artist of artists">
+            <div class="card artist-card">
+                <img [src]="artist.profilePicture?artist.profilePicture:'../../assets/profile-icon.jpg'" alt="Artist Image" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">{{ artist?.name }}</h5>
+                    <p class="card-text">Bio: {{ artist?.bio }}</p>
+                    <button class="btn btn-primary" (click)="openModal(artist)" data-bs-toggle="modal" data-bs-target="#customWorkModal">Request ArtWork</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="customWorkModal" aria-labelledby="customWorkModalLabel" aria-hidden="true" *ngIf="artists.length">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="customWorkModalLabel">
+                    Add Custom Work 
+                </h5>
+                <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body bg-secondary bg-opacity-10">
+                <small><strong class="text-muted" *ngIf="selectedArtist">Artist:</strong> {{ selectedArtist.name }}</small> <br>
+                <small><strong class="text-muted">Bio:</strong> {{ selectedArtist.bio }}</small> <br>
+                <small><strong class="text-muted">Email Address:</strong> {{ selectedArtist.email }}</small> <br>
+                <label class="text-muted fw-bold mt-2 mb-1">Description of Work:</label>
+                <textarea #desc="ngModel" class="form-control" name="description" id="description" [(ngModel)]="description" placeholder="Write custom work request description here ..." required></textarea>
+                <div class="text-danger small alert alert-danger py-2" *ngIf="desc.invalid && desc.dirty">Description is required.</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>  
+                <button type="button" class="btn btn-success" (click)="requestCustomWork()" data-bs-dismiss="modal" aria-label="Close" [disabled]="desc.invalid">Submit Request</button>   
+            </div>
+        </div>
+    </div>
+</div>

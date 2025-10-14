@@ -1,0 +1,23 @@
+.card {
+    border-radius: 12px;
+    width: 400px;
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.form-control {
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background-color: #6c5ce7;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #5a4ac7;
+}

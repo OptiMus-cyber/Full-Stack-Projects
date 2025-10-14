@@ -1,0 +1,28 @@
+<div class="container d-flex justify-content-center align-items-center my-3" *ngIf="artwork">
+    <div class="row">
+        <!-- Left Side: Images -->
+         <div class="col-md-6">
+            <img [src]="selectedImage" alt="Artwork Image" class="img-fluid rounded main-image">
+
+            <!-- Thumbnail List -->
+             <div class="thumbnail-container mt-3">
+                <img *ngFor="let img of artwork.images" [src]="img" alt="Thumbnail" class="thumbnail" [class.selected]="img===selectedImage" (click)="changeImage(img)">
+             </div>
+         </div>
+
+         <!-- Right Side: Artwork Info -->
+         <div class="col-md-6">
+            <h2 class="cursive">{{artwork.title}}</h2>
+            <p><strong class="cursive">Artist:</strong> {{ artwork.artistId.name }}</p>
+            <p><strong class="cursive text-muted">Category:</strong> {{ artwork.category }}</p>
+            <p><strong class="cursive text-muted">Description:</strong> {{ artwork.description }}</p>
+            <span><strong class="cursive text-muted">Price:</strong> 
+               <span *ngIf="!!promotion">
+               ${{ artwork.price-(artwork.price*promotion.discount)/100 }}
+            </span> <span [ngClass]="promotion?'text-decoration-line-through':''">${{ artwork.price }}</span></span>
+            <span class="text-warning" *ngIf="!!promotion">&nbsp;&nbsp;-{{promotion.discount}}%</span><br>
+            <button class="btn btn-outline-warning mt-3" (click)="purchaseArtwork()" *ngIf="authService.hasRole('buyer')">Buy Now</button>
+            <button class="btn ms-3 mt-3" [ngClass]="inWishlist?'btn-outline-danger':'btn-outline-secondary'" (click)="toggleWishlist()" *ngIf="authService.hasRole('buyer')">{{inWishlist ? "Remove from Wishlist": "Add to Wishlist"}}</button>
+         </div>
+    </div>
+</div>

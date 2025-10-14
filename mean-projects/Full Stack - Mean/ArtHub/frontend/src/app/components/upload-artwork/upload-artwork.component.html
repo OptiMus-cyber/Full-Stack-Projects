@@ -1,0 +1,54 @@
+<div class="container d-flex justify-content-center align-items-center p-3">
+    <div class="card shadow-m col-md-6">
+        <div class="card-header py-3">
+            <h3 class="text-center text-danger"><span class="text-info">Upload</span> Art<span class="text-success">Work</span></h3>
+        </div>
+        <div class="card-body bg-secondary bg-opacity-10">
+            <form id="uploadForm" [formGroup]="uploadForm" (ngSubmit)="uploadArtwork()">
+                 <!-- Add Artwork Title -->
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" formControlName="title" placeholder="Add title">
+                    <div class="text-danger small alert alert-danger py-2" *ngIf="uploadForm.controls['title'].invalid && uploadForm.controls['title'].dirty">Title is required</div>
+                </div>
+    
+                <!-- Add description -->
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea type="text" class="form-control" id="description" name="description" formControlName="description" placeholder="Add description"></textarea>
+                </div>
+    
+                <!-- Add price -->
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" class="form-control" id="price" name="price" formControlName="price">
+                    <div class="text-danger small alert alert-danger py-2" *ngIf="uploadForm.controls['price'].invalid && uploadForm.controls['price'].dirty">Price is required (Minimum 0)</div>
+                </div>
+    
+                <!-- Add category -->
+                <div class="mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <input type="text" class="form-control" id="category" name="category" formControlName="category" placeholder="Add category">
+                    <div class="text-danger small alert alert-danger py-2" *ngIf="uploadForm.controls['category'].invalid && uploadForm.controls['category'].dirty">Category is required</div>
+                </div>
+    
+                <!-- Upload images -->
+                <div class="mb-3">
+                    <label class="form-label">Upload Images</label>
+                    <input type="file" class="form-control" multiple (change)="onFileSelected($event)">
+                    <div class="text-danger small alert alert-danger py-2" *ngIf="uploadForm.controls['images'].invalid && uploadForm.dirty">File is required</div>
+                </div>
+
+                <!-- Image Preview -->
+                <div class="d-flex justify-content-center image-preview-container">
+                    <img *ngFor="let img of previewImages" [src]="img" class="img-thumbnail preview-image">
+                </div>
+    
+                <!-- Submit button -->
+            </form>
+        </div>
+        <div class="card-footer d-flex justify-content-center py-3">
+            <button form="uploadForm" type="submit" class="btn btn-primary px-4" [disabled]="uploadForm.invalid">Add Artwork</button>
+        </div>
+    </div>
+</div>

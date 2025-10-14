@@ -1,0 +1,56 @@
+Tue Oct 14 2025 23:02:42 GMT+0530 (India Standard Time) - MongooseError: Operation `promotion.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+Tue Oct 14 2025 23:03:02 GMT+0530 (India Standard Time) - Error: Could not connect to Database
+    at collection.getArtworkCollection (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\utilities\connection.js:100:19)
+    at async models.fetchArtworks (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\models\artwork.js:7:21)
+    at async services.fetchArtworks (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\services\artwork.js:8:24)
+    at async C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\routes\routing.js:16:24
+Tue Oct 14 2025 23:03:52 GMT+0530 (India Standard Time) - MongooseError: Operation `promotion.find()` buffering timed out after 10000ms
+    at Timeout.<anonymous> (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\mongoose\lib\drivers\node-mongodb-native\collection.js:187:23)
+    at listOnTimeout (node:internal/timers:588:17)
+    at process.processTimers (node:internal/timers:523:7)
+Tue Oct 14 2025 23:04:12 GMT+0530 (India Standard Time) - Error: Could not connect to Database
+    at collection.getArtworkCollection (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\utilities\connection.js:100:19)
+    at async models.fetchArtworks (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\models\artwork.js:7:21)
+    at async services.fetchArtworks (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\services\artwork.js:8:24)
+    at async C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\routes\routing.js:16:24
+Tue Oct 14 2025 23:11:58 GMT+0530 (India Standard Time) - Error: Invalid Token
+    at middlewares.auth (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\utilities\middleware.js:20:23)
+    at Layer.handle [as handle_request] (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:47:12)
+Tue Oct 14 2025 23:11:58 GMT+0530 (India Standard Time) - Error: No promotion found
+    at services.fetchAllPromotions (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\services\promotion.js:44:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\routes\routing.js:282:28
+Tue Oct 14 2025 23:11:58 GMT+0530 (India Standard Time) - Error: No artwork found
+    at services.fetchArtworks (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\services\artwork.js:12:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\routes\routing.js:16:24
+Tue Oct 14 2025 23:12:03 GMT+0530 (India Standard Time) - Error: Invalid Token
+    at middlewares.auth (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\utilities\middleware.js:20:23)
+    at Layer.handle [as handle_request] (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\node_modules\express\lib\router\index.js:47:12)
+Tue Oct 14 2025 23:12:03 GMT+0530 (India Standard Time) - Error: No artwork found
+    at services.fetchArtworks (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\services\artwork.js:12:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\routes\routing.js:16:24
+Tue Oct 14 2025 23:12:03 GMT+0530 (India Standard Time) - Error: No promotion found
+    at services.fetchAllPromotions (C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\services\promotion.js:44:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async C:\Users\Optimus\OneDrive\Documents\Resume Projects\Full-Stack-Projects\mean-projects\Full Stack - Mean\ArtHub\backend\src\routes\routing.js:282:28

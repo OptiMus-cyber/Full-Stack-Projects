@@ -1,0 +1,12 @@
+.wishlist-image {
+    width: 150px;
+    height: 80px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 2px solid transparent;
+}
+
+.cursive {
+    font-family: cursive;
+}

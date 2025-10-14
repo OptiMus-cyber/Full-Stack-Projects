@@ -1,0 +1,73 @@
+<div class="container d-flex justify-content-center align-items-center p-3">
+    <div class="card w-50 shadow-sm">
+        <div class="card-header bg-success text-white">{{userRole|titlecase}} Profile</div>
+        <div class="card-body">
+            <form id="profileForm" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <!-- Profile Picture Upload -->
+                <div class="d-flex justify-content-center">
+                    <img [src]="previewImage?previewImage:'../../assets/profile-icon.png'" class="img-thumbnail rounded-circle profile-img">
+                </div>
+                <div class="d-flex justify-content-center">
+                    <input type="file" class="form-control form-control-sm w-50 mt-1 mb-3 px-3" (change)="onFileSelected($event)">
+                </div>
+
+                <!-- Name -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" formControlName="name">
+                    <div class="text-danger small alert alert-danger py-2" *ngIf="profileForm.controls['name'].invalid && profileForm.controls['name'].dirty">Name is required (min. 3 characters)</div>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="text" class="form-control" id="email" name="email" formControlName="email" >
+                    <div class="text-danger small alert alert-danger py-2" *ngIf="profileForm.controls['email'].invalid && profileForm.controls['email'].dirty">
+                        Enter a valid email address
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password" name="password" formControlName="password" placeholder="*********">
+                    <div class="text-danger small alert alert-danger py-2" *ngIf="profileForm.controls['password'].invalid && profileForm.controls['password'].dirty">
+                        Password must have:
+                        <ul>
+                            <li>At least 8 characters</li>
+                            <li>1 uppercase & 1 lowercase</li>
+                            <li>1 number & 1 special symbols (@$!%*?#&)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role -->
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <input type="text" class="form-control text-muted text-capitalize" id="role" name="role" formControlName="role">
+                </div>
+
+                <!-- Bio -->
+                <div class="mb-3">
+                    <label for="bio" class="form-label">Bio</label>
+                    <textarea class="form-control" name="bio" id="bio" formControlName="bio" rows="3" placeholder="Something about you ..."></textarea>
+                </div>
+
+                <!-- Social Links -->
+                <div class="mb-3">
+                    <fieldset formGroupName="socialLinks">
+                        <label class="form-label">Social Links</label><br>
+                        <small class="text-muted mt-2">Instagram</small>
+                        <input type="text" class="form-control" placeholder="@instagram" name="socialLinks.instagram" formControlName="instagram">
+                        <small class="text-muted mt-2">Twitter</small>
+                        <input type="text" class="form-control" placeholder="@twitter" name="socialLinks.twitter" formControlName="twitter">
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+        <div class="card-footer d-flex justify-content-center py-3">
+            <!-- Submit Button -->
+            <button form="profileForm" type="submit" class="btn btn-success" [disabled]="profileForm.invalid">Update Profile</button>
+        </div>
+    </div>
+</div>
