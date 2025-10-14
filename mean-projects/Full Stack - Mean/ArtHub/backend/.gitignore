@@ -1,3 +1,4 @@
 .env
 ErrorLogger.txt
 RequestLogger.txt
+node_modules
